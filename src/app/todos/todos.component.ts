@@ -8,7 +8,11 @@ import { Component, trigger, transition, state, animate, style } from '@angular/
     trigger('fade', [
       transition('void => *', [
         style({ backgroundColor: 'yellow', opacity: 0 }),
-        animate(2000)
+        animate(500)
+      ]),
+
+      transition('* => void', [
+        animate(500), style({ opacity: 0 })
       ])
     ])
   ]
