@@ -12,7 +12,11 @@ import { bounceOutLeftAnimation } from "app/animations";
         style({ opacity: 0 }),
         animate(2000)
       ]),
-      transition(':leave', useAnimation(bounceOutLeftAnimation)),
+      transition(':leave', [
+        style({ backgroundColor: 'red' }),
+        animate(1000),
+        useAnimation(bounceOutLeftAnimation)
+      ])
     ])
   ]
 })
