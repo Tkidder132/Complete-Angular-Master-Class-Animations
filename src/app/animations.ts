@@ -16,12 +16,18 @@ export let bounceOutLeftAnimation = animation(
     ]))
 );
 
-export const fade = trigger('fade', [
-    state('void', style({ opacity: 0 })),
+export const fadeInAnimation = animation([
+    style({ opacity: 0 }),
+    animate(500)
+]);
 
-    transition(':enter, :leave', [
-        animate(500)
-    ])
+export const fadeOutAnimation = animation([
+    animate(500, style({ opacity: 0 }))
+]);
+
+export const fade = trigger('fade', [
+    transition(':enter', useAnimation(fadeInAnimation)),
+    transition(':leave', useAnimation(fadeOutAnimation))
 ]);
 
 export const slide = trigger('slide', [
