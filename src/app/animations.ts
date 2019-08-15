@@ -13,6 +13,6 @@ export const slide = trigger('slide', [
         animate(500, style({ transform: 'translateX(-10px)' }))
     ]),
     transition(':leave', [
-        animate(500, style({ transform: 'translateX(-100%)' }))
+        animate('0.5s cubic-bezier(.61, .29, .07, 1.01)', style({ transform: 'translateX(-100%)' }))
     ])
 ]);
