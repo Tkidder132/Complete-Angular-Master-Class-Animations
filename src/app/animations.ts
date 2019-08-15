@@ -12,5 +12,9 @@ export const slide = trigger('slide', [
     transition(':enter', [
         style({ transform: 'translateX(-10px)' }),
         animate(1000)
+    ]),
+    transition(':leave', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(1000)
     ])
 ]);
