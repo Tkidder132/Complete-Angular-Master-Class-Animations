@@ -18,8 +18,13 @@ export let bounceOutLeftAnimation = animation(
 
 export const fadeInAnimation = animation([
     style({ opacity: 0 }),
-    animate(500)
-]);
+    animate('{{ duration }} {{ easing }}')
+], {
+    params: {
+        duration: '2s',
+        easing: 'ease-out'
+    }
+});
 
 export const fadeOutAnimation = animation([
     animate(500, style({ opacity: 0 }))
