@@ -9,7 +9,7 @@ import { Component, trigger, transition, state, animate, style } from '@angular/
 
       state('void', style({ opacity: 0 })),
 
-      transition('void <=> *', [
+      transition(':enter, :leave', [
         animate(1000)
       ])
     ])
