@@ -11,11 +11,16 @@ import { useAnimation, trigger, transition, style, animate, query, animateChild,
         height: 0,
         paddingTop: 0,
         paddingBottom: 0,
-        overflow: 'hidden'
+        opacity: 0
       })),
 
       transition('collapsed => expanded', [
-        animate('250ms ease-out')
+        animate('250ms ease-out', style({
+          height: '*',
+          paddingTop: '*',
+          paddingBottom: '*'
+        })),
+        animate('1s', style({ opacity: 1 }))
       ]),
 
       transition('expanded => collapsed', [
