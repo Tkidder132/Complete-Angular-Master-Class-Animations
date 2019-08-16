@@ -1,4 +1,4 @@
-import { useAnimation, trigger, transition, style, animate, query, animateChild, group } from "@angular/animations";
+import { useAnimation, trigger, transition, style, animate, query, animateChild, group, stagger } from "@angular/animations";
 import { Component } from "@angular/core";
 import { bounceOutLeftAnimation, fadeInAnimation } from "app/animations";
 
@@ -14,7 +14,9 @@ import { bounceOutLeftAnimation, fadeInAnimation } from "app/animations";
             style({ transform: 'translateY(-20px)' }),
             animate(250)
           ]),
-          query('@todoAnimation', animateChild())
+          query('@todoAnimation', 
+            stagger('200ms', animateChild())
+          )
         ])
       ])
     ]),
