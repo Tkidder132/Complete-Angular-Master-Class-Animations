@@ -1,42 +1,11 @@
-import { useAnimation, trigger, transition, style, animate, query, animateChild, group, stagger } from "@angular/animations";
 import { Component } from "@angular/core";
-import { bounceOutLeftAnimation, fadeInAnimation } from "app/animations";
+import { todosAnimation, todoAnimation } from "./todos.component.animations";
 
 @Component({
   selector: 'todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css'],
-  animations: [
-    trigger('todosAnimation', [
-      transition(':enter', [
-        group([
-          query('h1', [
-            style({ transform: 'translateY(-20px)' }),
-            animate(250)
-          ]),
-          query('@todoAnimation', 
-            stagger('200ms', animateChild())
-          )
-        ])
-      ])
-    ]),
-
-    trigger('todoAnimation', [
-      transition(':enter', [
-        useAnimation(fadeInAnimation, {
-          params: {
-            duration: '500ms',
-            easing: 'ease-out'
-          }
-        })
-      ]),
-      transition(':leave', [
-        style({ backgroundColor: 'red' }),
-        animate(1000),
-        useAnimation(bounceOutLeftAnimation)
-      ])
-    ])
-  ]
+  animations: [ todosAnimation, todoAnimation ]
 })
 export class TodosComponent {
   items: any[] = [

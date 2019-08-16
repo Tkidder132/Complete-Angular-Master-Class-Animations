@@ -1,4 +1,4 @@
-import { animation, animate, keyframes, style, trigger, state, transition, useAnimation } from "@angular/animations";
+import { animation, animate, keyframes, style, trigger, transition, useAnimation } from "@angular/animations";
 
 
 export let bounceOutLeftAnimation = animation(
